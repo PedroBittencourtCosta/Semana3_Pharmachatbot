@@ -50,3 +50,19 @@ console.log(contarProdutosProximosDoVencimento([{ nome: "a", diasParaVencer: 31 
 console.log(contarProdutosProximosDoVencimento([{ nome: "a", diasParaVencer: -5 }]))
 console.log(contarProdutosProximosDoVencimento([{ nome: "a", diasParaVencer: 30 }, { nome: "a", diasParaVencer: 100 }, { nome: "a", diasParaVencer: -1 }]))
 
+// A4
+function precosComDesconto(precos: number[], percentual: number): number[] {
+
+  return precos.map((preco) => {
+  
+    const desconto = preco * (percentual/100);
+
+    return Number((preco - desconto).toFixed(2));
+  });
+}
+
+console.log(precosComDesconto([], 10));
+console.log(precosComDesconto([100], 0));
+console.log(precosComDesconto([100], 100));
+console.log(precosComDesconto([19.9, 5.5], 10));
+console.log(precosComDesconto([9.99], 15));
