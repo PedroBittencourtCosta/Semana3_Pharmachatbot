@@ -25,4 +25,28 @@ console.log(ticketsAbertos([{ id: 1, status: "aberto" }, { id: 2, status: "fecha
 console.log(ticketsAbertos([{ id: 1, status: "Aberto" }]))
 
 
+// A3
+function contarProdutosProximosDoVencimento(produtos: { nome: string; diasParaVencer: number }[]): number {
+
+  return produtos.reduce((qtd, produto) => {
+
+    if(produto.diasParaVencer <= 30){
+      qtd += 1;
+    }
+
+    return qtd;
+  }, 0);
+}
+
+// outra maneira de fazer sem o reduce, mais direta 
+// function contarProdutosProximosDoVencimento(produtos: { nome: string; diasParaVencer: number }[]): number {
+
+//   return produtos.filter((produto) => produto.diasParaVencer <= 30).length;
+// }
+
+console.log(contarProdutosProximosDoVencimento([]))
+console.log(contarProdutosProximosDoVencimento([{ nome: "a", diasParaVencer: 30 }]))
+console.log(contarProdutosProximosDoVencimento([{ nome: "a", diasParaVencer: 31 }]))
+console.log(contarProdutosProximosDoVencimento([{ nome: "a", diasParaVencer: -5 }]))
+console.log(contarProdutosProximosDoVencimento([{ nome: "a", diasParaVencer: 30 }, { nome: "a", diasParaVencer: 100 }, { nome: "a", diasParaVencer: -1 }]))
 
