@@ -15,5 +15,14 @@ const contatos: { nome: string; telefone: string }[] = [
 console.log(nomesDosContatos(contatos));
 console.log(nomesDosContatos([]));
 
+// A2
+function ticketsAbertos(tickets: { id: number; status: string }[]): { id: number; status: string }[] {
+  return tickets.filter((ticket) => ticket.status === "aberto");
+}
+
+console.log(ticketsAbertos([]))
+console.log(ticketsAbertos([{ id: 1, status: "aberto" }, { id: 2, status: "fechado" }, { id: 3, status: "aberto" }]))
+console.log(ticketsAbertos([{ id: 1, status: "Aberto" }]))
+
 
 
